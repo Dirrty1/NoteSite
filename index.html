@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/animations.css">
+</head>
+<body>
+    <header class="header">
+        <h1 class="logo">NotesApp</h1>
+        <nav id="authNav" class="auth-nav">
+            <button class="btn" onclick="showAuth('login')">Login</button>
+            <button class="btn" onclick="showAuth('register')">Register</button>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div id="authContainer" class="auth-container hidden">
+    <!-- Форма входа -->
+    <form id="loginForm" class="login-container">
+        <div class="login-header">
+            <h2 class="login-title">Welcome Back!</h2>
+            <p class="login-subtitle">Continue your productivity journey</p>
+        </div>
+        <div class="login-form">
+            <div class="form-group" data-icon="email">
+                <input type="email" id="loginEmail" required>
+                <label for="loginEmail">Email Address</label>
+            </div>
+            <div class="form-group" data-icon="password">
+                <input type="password" id="loginPassword" required>
+                <label for="loginPassword">Password</label>
+            </div>
+            <button type="submit" class="btn primary login-btn">Sign In</button>
+        </div>
+    </form>
+
+    <!-- Форма регистрации -->
+    <form id="registerForm" class="register-container">
+        <div class="register-header">
+            <h2 class="register-title">Get Started</h2>
+            <p class="register-subtitle">Join our community today</p>
+        </div>
+        <div class="register-form">
+            <div class="form-group" data-icon="email">
+                <input type="email" id="registerEmail" required>
+                <label for="registerEmail">Email Address</label>
+            </div>
+            <div class="form-group" data-icon="password">
+                <input type="password" id="registerPassword" required>
+                <label for="registerPassword">Create Password</label>
+            </div>
+            <button type="submit" class="btn primary register-btn">Create Account</button>
+        </div>
+    </form>
+</div>
+
+        <!-- Notes Section -->
+        <div id="notesSection" class="hidden">
+            <form id="noteForm" class="note-form card slide-up">
+                <div class="form-group">
+                    <input type="text" id="noteTitle" required>
+                    <label for="noteTitle">Note Title</label>
+                </div>
+                <div class="form-group">
+                    <textarea id="noteContent" rows="4" required></textarea>
+                    <label for="noteContent">Content</label>
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn primary">Save Note</button>
+                    <button type="button" class="btn" onclick="resetNoteForm()">Cancel</button>
+                </div>
+            </form>
+
+            <div id="notesGrid" class="notes-grid"></div>
+        </div>
+
+        <!-- <div id="message" class="message"></div> -->
+    </main>
+
+    <script src="js/utils.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/notes.js"></script>
+</body>
+</html>
